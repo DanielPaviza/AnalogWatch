@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tbConsole = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 50);
+            this.pictureBox1.Image = global::AnalogWatch.Properties.Resources.clock;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(360, 299);
+            this.pictureBox1.Size = new System.Drawing.Size(360, 360);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
@@ -49,25 +49,17 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // tbConsole
-            // 
-            this.tbConsole.Location = new System.Drawing.Point(44, 12);
-            this.tbConsole.Name = "tbConsole";
-            this.tbConsole.Size = new System.Drawing.Size(257, 23);
-            this.tbConsole.TabIndex = 1;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 361);
-            this.Controls.Add(this.tbConsole);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(366, 365);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -75,6 +67,5 @@
 
         private PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
-        private TextBox tbConsole;
     }
 }

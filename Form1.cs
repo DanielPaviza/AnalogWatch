@@ -8,29 +8,37 @@ namespace AnalogWatch
 
         private DateTime time = DateTime.Now;
         private int degreesEachSecond = 6;
-        private int minLineLength, secLineLength;
+        private int hLineLength, minLineLength, secLineLength;
         private Point center;
         private Graphics g;
-        private Pen secPen = new Pen(Color.Red, 2);
+        private Pen hPen = new Pen(Color.Black, 5);
         private Pen minPen = new Pen(Color.Black, 3);
-
-        public object Calcs { get; private set; }
+        private Pen secPen = new Pen(Color.Red, 2);
 
         public Form1()
         {
             InitializeComponent();
 
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             center = new Point(pictureBox1.Width / 2, pictureBox1.Height / 2);
-            minLineLength = pictureBox1.Height / 2 - 20;
-            secLineLength = pictureBox1.Height/2 - 10;
+            hLineLength = pictureBox1.Height / 2 - 60;
+            minLineLength = pictureBox1.Height / 2 - 40;
+            secLineLength = pictureBox1.Height/2 - 30;
             timer1.Start();
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            DrawHours(e.Graphics, hPen);
             DrawMinutes(e.Graphics, minPen);
             DrawSeconds(e.Graphics, secPen);
+        }
+
+        private void DrawHours(Graphics g, Pen p)
+        {
+            int h = time.Hour;
+            g.DrawLine(p, center, GetEndPoint(h, hLineLength));
         }
 
         private void DrawMinutes(Graphics g, Pen p)
@@ -64,8 +72,6 @@ namespace AnalogWatch
         private void timer1_Tick(object sender, EventArgs e)
         {
             time = DateTime.Now;
-            tbConsole.Text = time.ToString();
-
             pictureBox1.Refresh();
         }
     }
