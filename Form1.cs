@@ -20,6 +20,7 @@ namespace AnalogWatch
         private int minSize = 130;
         private int maxSize = 600;
         private Point lastLocation;
+        private bool mouseOnExit = false;
 
         public Form1()
         {
@@ -162,6 +163,16 @@ namespace AnalogWatch
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClose.Visible = true;
+        }
+
+        private void Form1_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.Visible = false;
         }
 
         private double ToRadians(double x) {

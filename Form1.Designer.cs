@@ -56,6 +56,7 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
@@ -63,6 +64,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonClose.Location = new System.Drawing.Point(327, 7);
             this.buttonClose.Name = "buttonClose";
@@ -70,6 +72,7 @@
             this.buttonClose.TabIndex = 0;
             this.buttonClose.Text = " X";
             this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Visible = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // Form1
@@ -92,6 +95,7 @@
             this.Text = "Hodiny";
             this.TransparencyKey = System.Drawing.Color.Transparent;
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.MouseLeave += new System.EventHandler(this.Form1_MouseLeave);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
